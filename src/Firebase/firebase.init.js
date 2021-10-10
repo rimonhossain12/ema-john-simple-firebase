@@ -38,4 +38,9 @@ Step 4: create aut create hook (useAuth)
 Step 5:
 1.create private Route
 2. Set private Route
+
+Setp 6: Redirects after login
+1. after login redirecsts user to their destination
+s
+
 */
