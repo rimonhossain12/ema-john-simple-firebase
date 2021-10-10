@@ -19,4 +19,10 @@ Step-2 :
 1.Create Login Component
 2.Create Register Component
 3.Create Route for Login and Register
+----------------------
+Setp-3:
+1.setup sing in method
+2. setpu sing out method
+3. user state
+4. Special observer;
 */
