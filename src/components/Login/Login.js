@@ -1,12 +1,22 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 import './Login.css';
 const Login = () => {
     const { singInUsingGoogle } = useAuth();
     const location = useLocation();
-    console.log('Came from', location.state?.form);
+    const history = useHistory();
+    const redirect_uri = location.state?.from || '/shop';
+    // console.log('Came from', location.state?.form);
+
+    const handleGogleLogIn = () => {
+        singInUsingGoogle()
+            .then(result => {
+                history.push(redirect_uri)
+            })
+    }
+
     return (
         <div className="login-form">
             <div>
@@ -20,7 +30,7 @@ const Login = () => {
                     <p>new to ema-john <Link to="/register">Create Account</Link></p>
                     <div>--------or----------</div>
                     <button
-                        onClick={singInUsingGoogle}
+                        onClick={handleGogleLogIn}
                         className="btn-regular">Google Sing In</button>
                 </div>
             </div>
